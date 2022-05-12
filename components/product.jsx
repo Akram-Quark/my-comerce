@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 function Product({ item, onAddToCart }) {
   return (
-    <Grid item xs={12} md={6} lg={4} mt={2}>
-      <Card sx={{ maxWidth: 345 }}>
+    <Grid item lg={4} sm={12} md={6} mt={2}>
+      <Card sx={{ maxWidth: 345, margin: "0 auto", minWidth: 345 }}>
         <CardMedia
           component="img"
           alt="green iguana"

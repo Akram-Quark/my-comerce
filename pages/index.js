@@ -18,9 +18,16 @@ export default function Home({ products_res, cart_res }) {
   };
 
   return (
-    <Grid container>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Products products_res={products} onAddToCart={addToCart} />
-    </Grid>
+    </div>
   );
 }
 export async function getServerSideProps() {
