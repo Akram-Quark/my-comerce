@@ -7,7 +7,9 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import { useState } from "react";
 function Product({ item, onAddToCart }) {
+  const [count, setCount] = useState(0);
   return (
     <Grid item lg={4} sm={12} md={6} mt={2}>
       <Card sx={{ maxWidth: 345, margin: "0 auto", minWidth: 345 }}>
@@ -33,6 +35,9 @@ function Product({ item, onAddToCart }) {
           <Typography variant="h6" color="tomato">
             {item.price.formatted_with_code}
           </Typography>
+          <Typography variant="body2">
+            Item added {count} times to card
+          </Typography>
         </CardContent>
         <CardActions>
           <Button
@@ -41,6 +46,7 @@ function Product({ item, onAddToCart }) {
             color="primary"
             onClick={() => {
               onAddToCart(item.id, 1);
+              setCount((prev) => prev + 1);
             }}
           >
             Add to cart
