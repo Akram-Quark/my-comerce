@@ -19,7 +19,10 @@ function Product({ item, onAddToCart }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {item.name} {item.sku}
+            {item.name}
+          </Typography>
+          <Typography gutterBottom variant="body2" color="blueviolet">
+            {item.sku} piece (s)
           </Typography>
           <Typography
             dangerouslySetInnerHTML={{ __html: item.description }}
@@ -40,7 +43,7 @@ function Product({ item, onAddToCart }) {
               onAddToCart(item.id, 1);
             }}
           >
-            Add to card
+            Add to cart
           </Button>
         </CardActions>
       </Card>
