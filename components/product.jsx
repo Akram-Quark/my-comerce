@@ -21,9 +21,12 @@ function Product({ item }) {
           <Typography gutterBottom variant="h5" component="div">
             {item.name} {item.sku}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.description}
-          </Typography>
+          <Typography
+            dangerouslySetInnerHTML={{ __html: item.description }}
+            variant="body2"
+            color="text.secondary"
+          />
+
           <Typography variant="h6" color="tomato">
             {item.price.formatted_with_code}
           </Typography>
