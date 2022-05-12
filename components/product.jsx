@@ -7,7 +7,7 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-function Product({ item }) {
+function Product({ item, onAddToCart }) {
   return (
     <Grid item xs={12} md={6} lg={4} mt={2}>
       <Card sx={{ maxWidth: 345 }}>
@@ -32,7 +32,14 @@ function Product({ item }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="medium" variant="contained" color="primary">
+          <Button
+            size="medium"
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              onAddToCart(item.id, 1);
+            }}
+          >
             Add to card
           </Button>
         </CardActions>
