@@ -7,16 +7,20 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import Image from "next/image";
 import { useState } from "react";
 function Product({ item, onAddToCart }) {
   const [count, setCount] = useState(0);
   return (
     <Grid item lg={4} sm={12} md={6} mt={2}>
       <Card sx={{ maxWidth: 345, margin: "0 auto", minWidth: 345 }}>
-        <CardMedia
-          component="img"
+        <Image
           alt="green iguana"
-          height="200"
+          height={200}
+          width={345}
+          objectFit="cover"
+          layout="responsive"
+          priority
           src={item.image.url}
         />
         <CardContent>
