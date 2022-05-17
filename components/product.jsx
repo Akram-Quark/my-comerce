@@ -1,7 +1,6 @@
 import {
   Grid,
   Card,
-  CardMedia,
   CardContent,
   Typography,
   CardActions,
@@ -14,15 +13,22 @@ function Product({ item, onAddToCart }) {
   return (
     <Grid item lg={4} sm={12} md={6} mt={2}>
       <Card sx={{ maxWidth: 345, margin: "0 auto", minWidth: 345 }}>
-        <Image
-          alt="green iguana"
-          height={200}
-          width={345}
-          objectFit="cover"
-          layout="responsive"
-          priority
-          src={item.image.url}
-        />
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: 200,
+          }}
+        >
+          <Image
+            alt={item.name}
+            objectFit="cover"
+            layout="fill"
+            priority
+            src={item.image.url}
+          />
+        </div>
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {item.name}
